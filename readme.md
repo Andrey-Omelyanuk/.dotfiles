@@ -1,6 +1,8 @@
+My .dot files. 
+
 Based on [this article](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/)
 
-Install from scratch:
+How to create now repo like this one:
 
 ```sh
 git init --bare $HOME/.git-dotfiles
@@ -12,9 +14,11 @@ echo "alias config='/usr/bin/git --git-dir=$HOME/.git-dotfiles/ --work-tree=$HOM
 Install onto a new system:
 
 
-```
+```sh
 git clone git@bitbucket.org:__Andrey/.dotfiles.git --bare $HOME/.git-dotfiles
+
 alias config='/usr/bin/git --git-dir=$HOME/.git-dotfiles/ --work-tree=$HOME'
-config checkout
+config config --local status.showUntrackedFiles no
+config checkout --force
 ```
 
