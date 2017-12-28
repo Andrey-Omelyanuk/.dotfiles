@@ -124,3 +124,4 @@ if [ -x /usr/bin/mint-fortune ]; then
      /usr/bin/mint-fortune
 fi
 alias config='/usr/bin/git --git-dir=/home/andrey/.git-dotfiles/ --work-tree=/home/andrey'
+export ANDROID_HOME="/opt/android-sdk"
