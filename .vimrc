@@ -20,6 +20,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'vim-scripts/vim-auto-save'
 
 " web - frontend
 Plug 'pangloss/vim-javascript'
@@ -66,3 +67,7 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 " vim-javascript
 let g:javascript_plugin_jsdoc = 1 " Enable syntax highlighting for JSDocs
 
+" vim-auto-save
+let g:auto_save = 1 " enable AutoSave on Vim startup
+let g:auto_save_in_insert_mode = 1
+let g:auto_save_silent = 1 " do not display the auto-save notification
