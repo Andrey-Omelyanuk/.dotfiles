@@ -71,3 +71,12 @@ let g:javascript_plugin_jsdoc = 1 " Enable syntax highlighting for JSDocs
 let g:auto_save = 1 " enable AutoSave on Vim startup
 let g:auto_save_in_insert_mode = 1
 let g:auto_save_silent = 1 " do not display the auto-save notification
+
+" cheatsheet
+"
+" gg      - go to 
+" GG      - go to the end of file
+" ctrl+[  - off edit mode
+"
+
+
