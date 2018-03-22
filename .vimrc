@@ -20,7 +20,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
-Plug 'vim-scripts/vim-auto-save'
+"Plug 'vim-scripts/vim-auto-save'
 
 " web - frontend
 Plug 'pangloss/vim-javascript'
@@ -54,6 +54,8 @@ filetype plugin indent on
 
 set hlsearch        " подсветка результатов поиска по /
 
+set nofoldenable    " disable folding
+
 " NERDTree
 let NERDTreeIgnore = ['\.pyc$']
 map <C-n> :NERDTreeToggle<CR>
@@ -67,10 +69,10 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 " vim-javascript
 let g:javascript_plugin_jsdoc = 1 " Enable syntax highlighting for JSDocs
 
-" vim-auto-save
-let g:auto_save = 1 " enable AutoSave on Vim startup
-let g:auto_save_in_insert_mode = 1
-let g:auto_save_silent = 1 " do not display the auto-save notification
+" vim-auto-save - off because I have frezzes!
+"let g:auto_save = 1  " enable AutoSave on Vim startup
+"let g:auto_save_in_insert_mode = 1
+"let g:auto_save_silent = 1 " do not display the auto-save notification
 
 " cheatsheet
 "
@@ -78,5 +80,12 @@ let g:auto_save_silent = 1 " do not display the auto-save notification
 " GG      - go to the end of file
 " ctrl+[  - off edit mode
 "
-
-
+" ctrl+n  - open NERDTree 
+" "+y     - copy to clipboard
+" "+p     - paste from clipboard
+" u       - undo
+" ctrl+r  - undo the undos
+" a       - edit mode on the next symbol
+" i       - edit mode on the current symbol
+"
+"
