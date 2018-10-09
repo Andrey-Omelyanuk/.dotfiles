@@ -16,10 +16,13 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'scrooloose/syntastic'
 Plug 'morhetz/gruvbox'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
+Plug 'junegunn/fzf.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'Shougo/deol.nvim'
 "Plug 'vim-scripts/vim-auto-save'
 
 " web - frontend
@@ -27,6 +30,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'digitaltoad/vim-jade'
 Plug 'wavded/vim-stylus'
+Plug 'posva/vim-vue'
 
 " python
 Plug 'klen/python-mode'
@@ -40,11 +44,17 @@ filetype plugin on
 
 let g:mapleader=','
 
+let g:gruvbox_contrast_dark='soft'
+let g:gruvbox_contrast_light='hard'
+" let g:gruvbox_italic=1
 syntax on
 colorscheme gruvbox
 set background=dark " цвет фона
+"set background=light " цвет фона
+
 set number          " показать номера строк
 
+set backupcopy=yes  " иначе webpack не видит обновление файла
 " настройка отступов
 set expandtab
 set smarttab
@@ -63,6 +73,9 @@ map <C-n> :NERDTreeToggle<CR>
 "
 map <Leader> <Plug>(easymotion-prefix)
 
+" we need this for vue pluging
+autocmd FileType vue syntax sync fromstart
+
 " editorconfig-vim
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
@@ -74,18 +87,3 @@ let g:javascript_plugin_jsdoc = 1 " Enable syntax highlighting for JSDocs
 "let g:auto_save_in_insert_mode = 1
 "let g:auto_save_silent = 1 " do not display the auto-save notification
 
-" cheatsheet
-"
-" gg      - go to 
-" GG      - go to the end of file
-" ctrl+[  - off edit mode
-"
-" ctrl+n  - open NERDTree 
-" "+y     - copy to clipboard
-" "+p     - paste from clipboard
-" u       - undo
-" ctrl+r  - undo the undos
-" a       - edit mode on the next symbol
-" i       - edit mode on the current symbol
-"
-"

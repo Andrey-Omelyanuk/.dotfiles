@@ -1,5 +1,13 @@
 My .dot files. 
 
+Git
+---
+User `config` instead `git` on home directory.
+`config add reset.sh` - add file to commit
+`config status`       - show current status
+`config commit -m 'text for comment'` - create new commit
+`config push` - update remote repository 
+
 Based on [this article](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/)
 
 How to create now repo like this one:
@@ -22,6 +30,12 @@ config config --local status.showUntrackedFiles no
 config checkout --force
 ```
 
+
+Use config instead git (it is alias with special options).
+For example:
+config add readme.md
+
+
 Vim (latest version) 
 ---
 based on https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
@@ -29,7 +43,8 @@ based on https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
 sudo apt install libncurses5-dev libgnome2-dev libgnomeui-dev \
     libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
     libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev \
-    python3-dev ruby-dev lua5.1 liblua5.1-dev libperl-dev git
+    python3-dev ruby-dev lua5.1 liblua5.1-dev libperl-dev git \
+    silversearcher-ag
 
 sudo apt remove vim vim-runtime gvim
 
