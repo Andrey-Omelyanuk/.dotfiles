@@ -1,15 +1,25 @@
 My .dot files. 
+Based on [this article](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/)
+
+HOW TO INSTALL:
+---------------
+```sh
+git clone git@bitbucket.org:__Andrey/.dotfiles.git --bare $HOME/.git-dotfiles
+alias config='/usr/bin/git --git-dir=$HOME/.git-dotfiles/ --work-tree=$HOME'
+config config --local status.showUntrackedFiles no
+config checkout --force
+```
 
 Git
 ---
-User `config` instead `git` on home directory.
-`config add reset.sh` - add file to commit
-`config status`       - show current status
-`config commit -m 'text for comment'` - create new commit
-`config push` - update remote repository 
+Use `config` instead of `git` in home directory.
+- `config add reset.sh` - add file to commit
+- `config status`       - show current status
+- `config commit -m 'text for comment'` - create new commit
+- `config push` - update remote repository 
 
-Based on [this article](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/)
-
+OTHER
+-----
 How to create now repo like this one:
 
 ```sh
@@ -18,18 +28,6 @@ alias config='/usr/bin/git --git-dir=$HOME/.git-dotfiles/ --work-tree=$HOME'
 config config --local status.showUntrackedFiles no
 echo "alias config='/usr/bin/git --git-dir=$HOME/.git-dotfiles/ --work-tree=$HOME'" >> $HOME/.bashrc
 ```
-
-Install onto a new system:
-
-
-```sh
-git clone git@bitbucket.org:__Andrey/.dotfiles.git --bare $HOME/.git-dotfiles
-
-alias config='/usr/bin/git --git-dir=$HOME/.git-dotfiles/ --work-tree=$HOME'
-config config --local status.showUntrackedFiles no
-config checkout --force
-```
-
 
 Use config instead git (it is alias with special options).
 For example:
