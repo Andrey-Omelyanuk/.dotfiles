@@ -1,4 +1,4 @@
-set nocompatible
+set nocompatible " отключаем обратную совместимость с vi
 
 " Automatic installation (https://github.com/junegunn/vim-plug/wiki/faq#automatic-installation)
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -8,10 +8,9 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-
 " base
 Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'} "
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'scrooloose/syntastic'
 Plug 'morhetz/gruvbox'
@@ -24,31 +23,32 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'Shougo/deol.nvim'
 "Plug 'vim-scripts/vim-auto-save'
-
 " web - frontend
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
+Plug 'herringtondarkholme/yats.vim'
+Plug 'maxmellon/vim-jsx-pretty'
+
 Plug 'digitaltoad/vim-jade'
 Plug 'wavded/vim-stylus'
 Plug 'posva/vim-vue'
-
 " python
 Plug 'klen/python-mode'
 Plug 'sirver/ultisnips'
 Plug 'davidhalter/jedi-vim'
-
-
 call plug#end()
 
-filetype plugin on
+set encoding=utf-8 
+filetype plugin indent on " включаем определение типа файла и загрузку соответствующих ему плагинов и файлов отступов
 
 let g:mapleader=','
 
+
+syntax on " подсветка синтаксиса
 let g:gruvbox_contrast_dark='soft'
 let g:gruvbox_contrast_light='hard'
+colorscheme gruvbox 
 " let g:gruvbox_italic=1
-syntax on
-colorscheme gruvbox
 set background=dark " цвет фона
 "set background=light " цвет фона
 
