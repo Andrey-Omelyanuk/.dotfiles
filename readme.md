@@ -13,6 +13,7 @@ config checkout --force
 Git
 ---
 Use `config` instead of `git` in home directory.
+
 - `config add reset.sh` - add file to commit
 - `config status`       - show current status
 - `config commit -m 'text for comment'` - create new commit

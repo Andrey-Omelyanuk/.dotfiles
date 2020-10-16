@@ -1,4 +1,5 @@
 set nocompatible " отключаем обратную совместимость с vi
+set clipboard=unnamedplus " теперь мы можем копировать/вставлять инфу из-вне вима
 
 " Automatic installation (https://github.com/junegunn/vim-plug/wiki/faq#automatic-installation)
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -28,6 +29,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'herringtondarkholme/yats.vim'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'peitalin/vim-jsx-typescript' 
 
 Plug 'digitaltoad/vim-jade'
 Plug 'wavded/vim-stylus'
