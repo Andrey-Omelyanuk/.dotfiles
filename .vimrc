@@ -1,5 +1,7 @@
+set shell=/bin/bash 
 set nocompatible " отключаем обратную совместимость с vi
 set clipboard=unnamedplus " теперь мы можем копировать/вставлять инфу из-вне вима
+set nowrap
 
 " Automatic installation (https://github.com/junegunn/vim-plug/wiki/faq#automatic-installation)
 if empty(glob('~/.vim/autoload/plug.vim'))
