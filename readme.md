@@ -10,6 +10,7 @@ config config --local status.showUntrackedFiles no
 config checkout --force
 ```
 
+
 Git
 ---
 Use `config` instead of `git` in home directory.
@@ -21,7 +22,26 @@ Use `config` instead of `git` in home directory.
 
 OTHER
 -----
+
+For laptop need to create a file:
+```sh
+sudo vim /etc/modprobe.d/inteldsp.conf
+```
+And put here a line 
+```
+options snd_intel_dspcfg dsp_driver=1
+```
+Usefull commands
+```sh
+    sudo vim /etc/modprobe.d/alsa-base.conf
+    sudo vim /etc/modprobe.d/inteldsp.conf
+    sudo hdajackretask
+    sudo hdajacksensetest
+```
+
+
 How to create now repo like this one:
+
 
 ```sh
 git init --bare $HOME/.git-dotfiles
@@ -35,55 +55,13 @@ For example:
 config add readme.md
 
 
-Vim (latest version) 
+How to install dependencies:
 ---
-based on https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
 ```sh
-sudo apt install libncurses5-dev libgnome2-dev libgnomeui-dev \
-    libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
-    libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev \
-    python3-dev ruby-dev lua5.1 liblua5.1-dev libperl-dev git \
-    silversearcher-ag
-
-sudo apt remove vim vim-runtime gvim
-
-cd ~/projects
-git clone https://github.com/vim/vim.git
-cd vim
-./configure --with-features=huge \
-            --enable-multibyte \
-            --enable-rubyinterp=yes \
-            --enable-python3interp=yes \
-            --with-python3-config-dir=/usr/lib/python3.5/config \
-            --enable-perlinterp=yes \
-            --enable-luainterp=yes \
-            --enable-gui=gtk2 \
-            --enable-cscope \
-            --prefix=/usr/local
-
-make VIMRUNTIMEDIR=/usr/local/share/vim/vim80
-
-sudo apt install checkinstall
-sudo checkinstall
-
-sudo update-alternatives --install /usr/bin/vim vim /usr/local/bin/vim 1
+sudo apt install vim-gtk3 tmux xclip curl make
 ```
+Note: use `vim-gtk3` instead of `vim` because gtk3 version has clipboard enabled by default.
 
-Tmux (latest version)
----
-based on http://bogdanvlviv.com/posts/tmux/how-to-install-the-latest-tmux-on-ubuntu-16_04.html
-```sh
-mkdir ~/projects
-cd ~/projects
-git clone https://github.com/tmux/tmux.git
-cd tmux
-sudo apt install -y git automake build-essential pkg-config libevent-dev libncurses5-dev
-sh autogen.sh
-./configure && make
-sudo apt-get remove tmux
-sudo checkinstall
-sudo update-alternatives --install /usr/bin/tmux tmux /usr/local/bin/tmux 1
-```
 
 Shourtcuts
 ==========
